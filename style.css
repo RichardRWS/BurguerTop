@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,30 +8,29 @@
     list-style: none;
     border: none;
     text-decoration: none;
-    font-family: 'Roboto' , sans-serif;
-} 
+    font-family: 'Roboto', sans-serif;
+}
 
 html {
     width: 100vw;
     height: 100vh;
     font-size: 62.5%;
     overflow-x: hidden;
-    /* Talvez removar sacroll */
     scroll-behavior: smooth;
     background-color: #1f1e1f;
 }
 
 /* Menu */
-
-.content {
+.barra {
     width: 100vw;
     height: 70px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: #DA291C; /* Vermelho McDonalds*/
+    background-color: #DA291C; /* Vermelho McDonalds */
     position: fixed;
-    padding-left: 30rem;
+    padding-left: 20rem;
+    padding-right: 20rem; /* Adicionado para garantir um espaçamento simétrico */
 }
 
 .logo {
@@ -50,14 +51,14 @@ html {
     height: 100%;
 }
 
-.content .list-menu {
+.barra .list-menu {
     width: 600px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.content .list-menu li a {
+.barra .list-menu li a {
     padding: 3rem 1rem 2rem 1rem;
     color: white;
     font-size: 1.8rem;
@@ -66,19 +67,16 @@ html {
     transition: all 200ms ease-in;
 }
 
-.content .list-menu li a:hover {
+.barra .list-menu li a:hover {
     background-color: #3333;
     border-bottom: 4px solid #ffc506;
     color: #ffc506;
 }
 
-
-
 /* First Section */
-
 .first-section {
     height: 100vh;
-    background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)) ,url(./Imagens/restaurante.jpg);
+    background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)), url(./Imagens/restaurante.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -112,49 +110,28 @@ html {
     margin-bottom: 3rem;
 }
 
-.btn button {
-    width: 230px;
-    height: 60px;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: #ffc506;
-    border-radius: 10px;
-    color: black;
-    font-weight: 700;
-    margin-top: 5rem;
-    transition: all 400ms ease-in;
-}
-
-.btn button:hover {
-    border: 1px solid #ffc506;
-    background-color: transparent;
-    color: #ffc506;
-}
-
-.btn {
-    width: 480px;
-    display: flex;
-    justify-content: space-between;
-}
 
 /* Sobre nós */
-
 .sobre-nos {
-    background-color: #1f1e1f;
     width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1e1f;
     padding-bottom: 5rem;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Torna a disposição vertical em telas pequenas */
+    text-align: center; /* Centraliza o texto */
 }
 
 .sobre-nos img {
     width: 400px;
     height: 400px;
-    margin-top: 10rem;
+    margin-top: 20rem;
     margin-left: 10rem;
-    border: 2px solid rgb(155, 155, 155);
+    border: 2px solid rgb(7, 7, 7);
+    object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorção */
 }
 
 .main {
@@ -167,15 +144,18 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} 
+    padding-top: 12rem;
+}
 
 .contentsobre h2 {
-    font-size: 6rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #ffc506;
 }
 
 .contentsobre p {
-    text-align: center;
+    text-align: justify;
     font-size: 1.8rem;
     width: 600px;
 }
@@ -184,17 +164,20 @@ html {
 
 .cardapio {
     width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(12, 12, 12, 0.8);
+    padding-top: 9rem;
 }
 
 .cardapio h2 {
     font-size: 5rem;
-    color: #e6e6e6;
+    color: #ffc506;
     text-transform: uppercase;
+    margin-bottom: 2rem;
 }
 
 .itens-cardapio {
@@ -238,9 +221,8 @@ html {
     text-align: center;
     text-decoration: underline;
   }
-  
 
-/* O grid pode ser mudado para deixar um breve texto centralizado */
+  /* O grid pode ser mudado para deixar um breve texto centralizado */
 .itens-cardapio .info h4 {
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -250,6 +232,17 @@ html {
     align-items: center;
     grid-template-columns: 150px 150px; 
     margin-left: 6rem;
+}
+
+.price {
+    font-size: 1.9rem; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #585858; /* Cor do texto (exemplo: vermelho) */
+    display: block; /* Faz o span se comportar como um bloco (pode ser útil para quebrar linha) */
+    margin-top: 20px; /* Adiciona um espaçamento superior */
+    text-align: center;
+    text-decoration: underline;
+    
 }
 
 .itens-cardapio .info h4 span {
@@ -269,60 +262,128 @@ html {
     height: 200px;
 }
 
-.itens-cardapio .info .pedir {
-    width: 200px;
-    height: 35px;
-    margin-top: 0.5rem;
-    background-color: #ffc506;
-    border-radius: 5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: black;
-    transition: all 200ms ease-in;
-}
 
-.itens-cardapio .info .pedir:hover {
-    background-color: #DA291C;
-    color: white;
-}
 
 /* Contatos */
 
-.contatos {
-    width: 100%;
-    background-color: #DA291C;
+.contato {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(12, 12, 12, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.8rem;
     color: white;
-    padding-bottom: 4rem;
+    text-align: center;
+    padding-top: 8rem;
+    
 }
 
-.contatos h3 {
-    font-size: 6rem;
+.contato h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #ffc506;
+}
+
+.introducao-formulario {
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 1.6;
     margin-bottom: 3rem;
+    padding: 0 1rem;
+    font-weight: 400;
+    color: #e6e6e6;
+    max-width: 800px;
 }
 
-.contatos-secao {
+.formulario {
+    width: 100%;
+    max-width: 650px; /* Garante que o formulário tenha um limite máximo de largura */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 3rem;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
 
+.formulario label {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario input[type="submit"] {
+    background-color: #ffc506;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #e0a400;
+}
+
+.contato-secao {
     width: 650px;
     display: flex;
     justify-content: space-between;
     font-size: 2rem;
+    margin-top: 3rem;
 }
 
-.contatos-secao i {
+.contato-secao i {
     margin-right: 1rem;
 }
 
-.contatos-secao div {
+.contato-secao div {
     cursor: pointer;
     transition: all 200ms ease-in;
 }
 
-.contatos-secao div:hover {
+.contato-secao div:hover {
+    color: #ffc506;
+}
+
+.btn {
+    width: 480px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #ffc506;
+    border-radius: 10px;
+    color: black;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: all 400ms ease-in;
+}
+
+.btn button:hover {
+    border: 1px solid #ffc506;
+    background-color: transparent;
     color: #ffc506;
 }
 
@@ -334,14 +395,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-} 
+}
 
 @media (max-width: 1200px) {
     .main {
         display: block;
     }
 
-    .content {
+    .barra {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -351,7 +412,7 @@ footer {
 
     .sobre-nos img {
         width: 600px;
-        margin-left: -2px;
+        margin-left: 0;
     }
 }
 
@@ -366,14 +427,14 @@ footer {
         font-size: 45%;
     }
 
-    .content {
+    .barra {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 0px 40px;
     }
 
-    .content .list-menu {
+    .barra .list-menu {
         display: none;
     }
     
@@ -392,7 +453,7 @@ footer {
         height: 30px;
     }
 
-    .content.on {
+    .barra.on {
         position: fixed;
         top: 0;
         left: 0;
@@ -406,38 +467,38 @@ footer {
         align-items: center;
     }
 
-    .content.on .logo {
+    .barra.on .logo {
         display: none;
     }
 
-    .content.on .menu-toggle {
+    .barra.on .menu-toggle {
         position: absolute;
         right: 40px;
         top: 20px;
     }
 
-    .content.on .list-menu {
+    .barra.on .list-menu {
         display: block;
     }
 
-    .content.on .list-menu li {
+    .barra.on .list-menu li {
         display: flex;
         justify-content: center;
     }
-    .content.on .list-menu li a {
+    .barra.on .list-menu li a {
         font-size: 2rem;
     }
 
     
-    .content.on .menu-toggle .two {
+    .barra.on .menu-toggle .two {
         opacity: 0;
     }
     
-    .content.on .menu-toggle .one {
+    .barra.on .menu-toggle .one {
         transform: rotate(45deg) translate(5px, -8px);
     }
 
-    .content.on .menu-toggle .three {
+    .barra.on .menu-toggle .three {
         transform: rotate(-45deg) translate(20px, -6px);
     }
 
@@ -451,14 +512,94 @@ footer {
         margin-left: 12rem;
     }
 
-    .contatos-secao {
-        display: block;
-        text-align: center;
-        font-size: 2rem;
+    .contato {
+        padding-top: 4rem; /* Menos espaçamento superior em telas pequenas */
     }
 
-    .contatos-secao div {
+    .contato h2 {
+        font-size: 3rem; /* Reduzir o tamanho da fonte para cabeçalho */
+        margin-top: 8rem;
+    }
+
+    .introducao-formulario {
+        font-size: 1.4rem; /* Fontes menores para telas pequenas */
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .formulario {
+        padding: 2rem; /* Menos padding em telas pequenas */
+    }
+
+    .formulario input,
+    .formulario textarea {
+        font-size: 1.4rem; /* Fontes menores para inputs */
+        padding: 0.8rem; /* Ajustar o padding */
+    }
+
+    .formulario input[type="submit"] {
+        font-size: 1.6rem; /* Ajustar o tamanho da fonte no botão */
+        padding: 0.8rem 1.5rem; /* Ajustar padding do botão */
+    }
+
+    .contato-secao {
+        width: 100%;
+        font-size: 1.6rem;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .contato-secao div {
         margin: 1rem;
+    }
+
+    .cardapio h2 {
+        font-size: 3rem; /* Ajuste de tamanho de fonte em telas menores */
+        margin-top: 8rem;
+    }    
+
+    .btn {
+        width: 100%; /* A largura do botão fica 100% */
+        justify-content: center;
+    }
+
+    .btn button {
+        width: 200px; /* Ajusta o tamanho do botão */
+    }
+
+    .sobre-nos img {
+        width: 350px; /* Reduz o tamanho da imagem */
+        margin-left: 0;
+        margin-top: 2rem; /* Menos espaço superior em telas menores */
+    }
+
+    .contentsobre {
+        width: 90%; /* Garante que o conteúdo se ajuste em telas pequenas */
+    }
+
+    .contentsobre h2 {
+        font-size: 4rem; /* Reduz o tamanho do título */
+        margin-top: 1rem;
+    }
+
+    .contentsobre p {
+        font-size: 1.6rem; /* Reduz o tamanho do texto */
+        width: 90%; /* Ajusta a largura do parágrafo */
+    }
+
+    footer .footer-content {
+        width: 90%;  /* Ajuste a largura para telas menores */
+        margin-top: 1rem;
+    }
+
+    footer .footer-content .footer-section {
+        flex: 1 1 100%;  /* As seções ocuparão toda a largura disponível em telas menores */
+        margin: 10px 0;
+    }
+
+    footer .footer-bottom {
+        font-size: 1rem;
     }
 }
 
@@ -488,7 +629,7 @@ footer {
         width: 400px;
     }
 
-    .contatos-secao {
+    .contato-secao {
         width: 300px;
     }
 }
@@ -498,12 +639,11 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 150px;
+        width: 100%;
     }
 
     .btn button {
         font-size: 1.5rem;
-        width: 250px;
         width: 100%;
     }
 
@@ -527,8 +667,13 @@ footer {
         margin-left: 10px;
     }
 
+    .contentsobre h2 {
+        margin-left: 40px;
+    }
+
     .contentsobre p {
         text-align: center;
+        margin-left: 40px;
         width: 250px;
     }
 
@@ -559,8 +704,131 @@ footer {
         grid-template-columns: 93px 150px;
     }
 
-    .itens-cardapio .info .pedir {
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-content .footer-section {
+    margin: 10px;
+    flex: 1 1 200px; /* Garantir que cada seção ocupe pelo menos 200px */
+}
+
+footer .footer-content .footer-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+footer .footer-content .footer-section p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+footer .footer-content .footer-section a {
+    color: #ffc506;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-content .footer-section a:hover {
+    color: #fff;
+}
+
+footer .footer-bottom {
+    width: 100%;
+    background-color: #222;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    color: #ccc;
+    text-align: center;
+}
+
+
+@media (max-width: 480px) {
+
+    .sobre-nos img {
+        width: 250px;
+        height: auto;
+        margin-left: 10px;
+    }
+
+    .contentsobre h2 {
+        margin-left: 40px;
+    }
+
+    .contentsobre p {
+        text-align: center;
+        margin-left: 40px;
+        width: 250px;
+    }
+
+    .itens-cardapio {
+        width: 50%;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 350px));
+    }
+
+    .itens-cardapio img {
+        width: 80%;
+        width: auto;
+    }
+
+    .itens-cardapio div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .itens-cardapio .info {
         width: 100%;
-        font-size: 1.5rem;
+        height: 150px;
+    }
+
+    .itens-cardapio .info h4 {
+        grid-template-columns: 93px 150px;
+    }
+
+
+
+    footer {
+        font-size: 12px; /* Ajuste do tamanho da fonte */
+    }
+
+    footer .footer-content .footer-section h3 {
+        font-size: 1.4rem; /* Tamanho da fonte dos títulos */
+    }
+
+    footer .footer-content .footer-section p {
+        font-size: 1.2rem; /* Tamanho da fonte do texto */
+    }
+
+    footer .footer-content .footer-section a {
+        font-size: 1.2rem; /* Tamanho da fonte dos links */
+    }
+
+    footer .footer-bottom {
+        font-size: 1rem;
     }
 }
+
+
